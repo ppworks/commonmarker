@@ -1,3 +1,5 @@
+# [v1.1.5] - 17-10-2024
+**Full Changelog**: https://github.com/ppworks/commonmarker/commits/v1.1.5
 # [v1.1.5] - 29-07-2024
 ## What's Changed
 * Bump magnus from 0.6.4 to 0.7.1 by @dependabot in https://github.com/gjtorikian/commonmarker/pull/301
