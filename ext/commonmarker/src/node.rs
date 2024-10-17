@@ -687,6 +687,12 @@ impl CommonmarkerNode {
             ComrakNodeValue::CodeBlock(ref code_block) => {
                 return Ok(code_block.literal.to_string())
             }
+            ComrakNodeValue::HtmlBlock(ref html_block) => {
+                return Ok(html_block.literal.to_string())
+            }
+            ComrakNodeValue::HtmlInline(ref html_inline) => {
+                return Ok(html_inline.to_string())
+            }
             _ => {}
         }
 
