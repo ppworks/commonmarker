@@ -41,7 +41,7 @@ module Commonmarker
     def to_html(options: Commonmarker::Config::OPTIONS, plugins: Commonmarker::Config::PLUGINS)
       raise TypeError, "options must be a Hash; got a #{options.class}!" unless options.is_a?(Hash)
 
-      opts = Config.process_options(options)
+      opts = Config.process_options(options.deep_dup)
       plugins = Config.process_plugins(plugins)
 
       node_to_html(options: opts, plugins: plugins).force_encoding("utf-8")
@@ -56,7 +56,7 @@ module Commonmarker
     def to_commonmark(options: Commonmarker::Config::OPTIONS, plugins: Commonmarker::Config::PLUGINS)
       raise TypeError, "options must be a Hash; got a #{options.class}!" unless options.is_a?(Hash)
 
-      opts = Config.process_options(options)
+      opts = Config.process_options(options.deep_dup)
       plugins = Config.process_plugins(plugins)
 
       node_to_commonmark(options: opts, plugins: plugins).force_encoding("utf-8")

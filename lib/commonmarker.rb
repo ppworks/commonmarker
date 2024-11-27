@@ -21,7 +21,7 @@ module Commonmarker
       raise TypeError, "text must be UTF-8 encoded; got #{text.encoding}!" unless text.encoding.name == "UTF-8"
       raise TypeError, "options must be a Hash; got a #{options.class}!" unless options.is_a?(Hash)
 
-      opts = Config.process_options(options)
+      opts = Config.process_options(options.deep_dup)
 
       commonmark_parse(text, options: opts)
     end
@@ -38,7 +38,7 @@ module Commonmarker
       raise TypeError, "text must be UTF-8 encoded; got #{text.encoding}!" unless text.encoding.name == "UTF-8"
       raise TypeError, "options must be a Hash; got a #{options.class}!" unless options.is_a?(Hash)
 
-      opts = Config.process_options(options)
+      opts = Config.process_options(options.deep_dup)
       plugins = Config.process_plugins(plugins)
 
       commonmark_to_html(text, options: opts, plugins: plugins)
