@@ -1,3 +1,5 @@
+# [v2.0.0] - 27-11-2024
+**Full Changelog**: https://github.com/ppworks/commonmarker/commits/v2.0.0
 # [v2.0.0] - 25-11-2024
 
 This is a major release in the sense that there's a breaking API change,
